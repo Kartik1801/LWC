@@ -1,7 +1,13 @@
-<template>
-    <lightning-card title="Parent">
-        {item}
-        <button class="slds-button slds-button_neutral" onclick={handleClick}>Neutral Button</button>
-        <c-one-l-w-c-child item="changedbyparent"></c-one-l-w-c-child>
+<template >
+    <lightning-card title="Parent" class="slds-m-around_medium">
+            <div class="slds-m-around_medium">
+                {item}
+            </div>    
+            <div class="slds-m-around_medium">
+                <lightning-button variant="brand" label="clickMe" title="Click ME" onclick={handleClick} class="slds-m-left_x-small"></lightning-button>
+            </div>
+        <div>
+            <c-one-l-w-c-child class="slds-m-around_medium" item="changed by parent"></c-one-l-w-c-child>
+        </div>
     </lightning-card>
 </template>
