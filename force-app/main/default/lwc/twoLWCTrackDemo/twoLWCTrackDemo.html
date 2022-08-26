@@ -1,0 +1,10 @@
+<template>
+    <lightning-card class="slds-m-around_medium" title="Info">
+        <lightning-input class="slds-m-around_medium" label="First Name" name="firstName" type="text" onchange={handleChange}></lightning-input>
+        <lightning-input class="slds-m-around_medium" label="Last Name" name="lastName" type="text" onchange={handleChange}></lightning-input>
+    </lightning-card>
+    <lightning-card class="slds-m-around_medium" title="Updated Info">
+        <h1 class="slds-m-around_medium">{fullName.firstName}</h1>
+        <h1 class="slds-m-around_medium">{fullName.lastName}</h1>
+    </lightning-card>
+</template> 
