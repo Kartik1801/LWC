@@ -18,7 +18,6 @@ export default class WireDemo extends LightningElement {
     @wire(getContacts)
     fetchedData({data, error}){
         if(data){
-            console.log(data);
             this.data = data; 
         }
         else if(error){

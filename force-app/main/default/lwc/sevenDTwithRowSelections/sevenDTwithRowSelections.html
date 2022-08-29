@@ -1,0 +1,23 @@
+<template>
+    <lightning-card>
+        <h3 style="margin:2px;" slot='title'>DATA TABLE WITH ROW SELECTION</h3>             
+        <lightning-button slot='actions'  style="margin:2px;" variant="brand" onclick={handleShowDataTableButtonClick} label={showDataTableButtonValue}></lightning-button>
+        <lightning-button slot='actions'  style="margin:2px;" variant="brand" onclick={handleSearchButtonClick} label={searchButtonValue}></lightning-button>
+        <template if:true={showSearchField}>
+            <div class="slds-m-around_medium">
+                <lightning-input style="margin:2px;" type="text" label="Search" onchange={handleSearch} placeholder="Enter Name to Search For."></lightning-input>
+            </div>
+        </template>
+        <template for:each={selectedItems} for:item="item" >
+            <div style="display:flex;justify-content:space-evenly" key = {item.Id} class="slds-m-around_medium">
+                <h1 class='slds-m-around_medium' key={item.Id}> ID: {item.Id} </h1>
+                <h1 class='slds-m-around_medium' key={item.Id}> Name: {item.Name} </h1>
+            </div>
+        </template>
+        <template if:true={showDataTable}>
+                <div style='height: 200px'>
+                    <lightning-datatable style="margin:2px;" key-field="Id" data={data} onrowselection={getSelectedRow} columns={columns}></lightning-datatable>
+                </div>
+        </template>
+    </lightning-card>
+</template>
