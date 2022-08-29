@@ -1,25 +1,21 @@
 import { LightningElement, track, wire } from 'lwc';
-import getAccountList from "@salesforce/apex/wireDemoClass.getAccountList";
+import getContacts from "@salesforce/apex/ImperativeDemo.getContacts";
 
 const columns = [ 
     {
-        label: "id",
+        label: "ID",
         fieldName: "Id"
     },
     {
         label: "Name", 
-        fieldName: "Name"       
-    },
-    {
-        label: "Number of Employees",
-        fieldName: "NumberOfEmployees"
+        fieldName: "Name"               
     }
 ];
 
 export default class WireDemo extends LightningElement {
     @track columns = columns;
     @track data = []; 
-    @wire(getAccountList)
+    @wire(getContacts)
     fetchedData({data, error}){
         if(data){
             console.log(data);

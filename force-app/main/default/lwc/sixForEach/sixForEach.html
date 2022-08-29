@@ -1,10 +1,10 @@
 <template>
-    <lightning-card title="Account Records">
-        <template for:each={data} for:item="record" >
-            <lightning-card key={record.Id}>
-                Name: {record.Name}
-                NumberOfEmployees: {record.NumberOfEmployees}
-            </lightning-card>
-        </template>
+    <lightning-card title="Account Records">    
+            <template for:each={data} for:item="record" >
+                <h1 key={record.Id}>
+                    Name: {record.Name}
+                    NumberOfEmployees: {record.NumberOfEmployees}
+                </h1>
+            </template>
     </lightning-card>    
 </template>
